@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Graphics | jakublabs.xyz</title>
+    <link rel="stylesheet" href="styles.css?v=2" />
+  </head>
+  <body>
+    <main class="app" aria-labelledby="page-title">
+      <section class="hero">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>countdown.jakublabs.xyz</span>
+        </div>
+        <p class="kicker">dramatic waiting room</p>
+        <h1 id="page-title">Countdown Graphics</h1>
+        <p class="lede">make a countdown for birthdays, exams, trips, events, releases, and anything worth overhyping</p>
+      </section>
+
+      <section class="builder-grid">
+        <section class="panel controls">
+          <div class="section-heading">
+            <p class="kicker">build</p>
+            <h2>countdown setup</h2>
+          </div>
+
+          <form id="countdown-form">
+            <label class="field">
+              <span>title</span>
+              <input id="title-input" type="text" value="Jakub's Birthday" maxlength="70" required />
+            </label>
+
+            <label class="field">
+              <span>subtitle</span>
+              <input id="subtitle-input" type="text" value="time until the moment" maxlength="90" />
+            </label>
+
+            <div class="field-grid">
+              <label class="field">
+                <span>date</span>
+                <input id="date-input" type="date" required />
+              </label>
+              <label class="field">
+                <span>time</span>
+                <input id="time-input" type="time" required />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>style</span>
+              <select id="theme-input">
+                <option value="void">void</option>
+                <option value="birthday">birthday</option>
+                <option value="exam">exam</option>
+                <option value="trip">trip</option>
+                <option value="release">release</option>
+              </select>
+            </label>
+
+            <div class="button-row">
+              <button class="button button-light" type="submit">Update</button>
+              <button class="button button-dark" id="copy-link" type="button">Copy Link</button>
+              <button class="button button-dark" id="render-graphic" type="button">Render Graphic</button>
+            </div>
+          </form>
+
+          <p class="status" id="share-status"></p>
+        </section>
+
+        <section class="countdown-stage" id="countdown-stage">
+          <div class="countdown-card" id="countdown-card">
+            <p class="kicker" id="countdown-kicker">countdown</p>
+            <h2 id="countdown-title">Jakub's Birthday</h2>
+            <p id="countdown-subtitle">time until the moment</p>
+            <div class="timer" id="timer" aria-live="polite">
+              <div><strong id="days">000</strong><span>days</span></div>
+              <div><strong id="hours">00</strong><span>hours</span></div>
+              <div><strong id="minutes">00</strong><span>mins</span></div>
+              <div><strong id="seconds">00</strong><span>secs</span></div>
+            </div>
+            <p class="target" id="target-label"></p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <canvas id="render-canvas" width="1200" height="1600" hidden></canvas>
+    <script src="script.js?v=2"></script>
+  </body>
+</html>
